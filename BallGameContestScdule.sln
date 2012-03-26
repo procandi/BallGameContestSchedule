@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.2.0.8649-Beta 2
+Project("{FD48973F-F585-4F70-812B-4D0503B36CE9}") = "BallGameContestScdule", "BallGameContestScdule\BallGameContestScdule.pyproj", "{5ED62738-1065-4808-8F03-6306EA9E713E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ED62738-1065-4808-8F03-6306EA9E713E}.Debug|x86.Build.0 = Debug|x86
+		{5ED62738-1065-4808-8F03-6306EA9E713E}.Debug|x86.ActiveCfg = Debug|x86
+		{5ED62738-1065-4808-8F03-6306EA9E713E}.Release|x86.Build.0 = Release|x86
+		{5ED62738-1065-4808-8F03-6306EA9E713E}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal

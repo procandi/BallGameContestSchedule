@@ -1,0 +1,12 @@
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\BallGameContestScdule.exe.config
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\BallGameContestScdule.exe
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\BallGameContestScdule.dll
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\IronPython.dll
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\IronPython.Modules.dll
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\Microsoft.Dynamic.dll
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\Microsoft.Scripting.dll
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\Microsoft.Scripting.Metadata.dll
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\IronPython.xml
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\IronPython.Modules.xml
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\obj\x86\Debug\BallGameContestScdule.exe
