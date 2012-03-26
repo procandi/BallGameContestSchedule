@@ -10,6 +10,9 @@ D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debu
 D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\bin\Debug\IronPython.Modules.xml
 D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\obj\x86\Debug\BallGameContestScdule.exe
+<<<<<<< HEAD
 D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\obj\x86\Debug\BallGameContestScdule.MainForm.resources
 D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\ed\SharpDevelop Projects\BallGameContestScdule\BallGameContestScdule\obj\x86\Debug\GenerateResource.write.1.tlog
+=======
+>>>>>>> d6060508dc7b0fd459b8b46b1c8081da85043475

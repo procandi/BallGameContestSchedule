@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="frmField.py" />
     <Compile Include="frmSort.py" />
     <Compile Include="frmTeam.py" />
@@ -66,15 +67,21 @@
     <Compile Include="modFile.py" />
     <Compile Include="modOffice.py" />
     <Compile Include="modPublic.py" />
+=======
+    <Compile Include="MainForm.py" />
+>>>>>>> d6060508dc7b0fd459b8b46b1c8081da85043475
     <Compile Include="Program.py" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.py</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+=======
+>>>>>>> d6060508dc7b0fd459b8b46b1c8081da85043475
   <Import Project="$(PythonBinPath)\SharpDevelop.Build.Python.targets" />
 </Project>

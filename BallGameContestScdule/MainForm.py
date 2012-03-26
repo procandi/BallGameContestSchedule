@@ -4,6 +4,7 @@ import System.Windows.Forms
 from System.Drawing import *
 from System.Windows.Forms import *
 
+<<<<<<< HEAD
 #my self module to process some question
 import modFile
 import modOffice
@@ -14,11 +15,14 @@ import frmTeam
 import frmSort
 import frmField
 
+=======
+>>>>>>> d6060508dc7b0fd459b8b46b1c8081da85043475
 class MainForm(Form):
 	def __init__(self):
 		self.InitializeComponent()
 	
 	def InitializeComponent(self):
+<<<<<<< HEAD
 		self._panel1 = System.Windows.Forms.Panel()
 		self._textBox1 = System.Windows.Forms.TextBox()
 		self._btnSort = System.Windows.Forms.Button()
@@ -110,3 +114,11 @@ class MainForm(Form):
 		result=file.readfile("D:\\aa.txt")
 		print result
 		pass
+=======
+		# 
+		# MainForm
+		# 
+		self.Name = "MainForm"
+		self.Text = "BallGameContestScdule"
+
+>>>>>>> d6060508dc7b0fd459b8b46b1c8081da85043475
