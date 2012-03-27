@@ -1,0 +1,17 @@
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\BallGameContestSchedule.exe.config
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\BallGameContestSchedule.exe
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\BallGameContestSchedule.dll
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\IronPython.dll
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\IronPython.Modules.dll
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\Microsoft.Dynamic.dll
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\Microsoft.Scripting.dll
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\Microsoft.Scripting.Metadata.dll
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\IronPython.xml
+D:\git\BallGameContestSchedule\BallGameContestSchedule\bin\Debug\IronPython.Modules.xml
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\BallGameContestSchedule.exe
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\BallGameContestSchedule.frmField.resources
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\BallGameContestSchedule.frmTeam.resources
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\BallGameContestSchedule.MainForm.resources
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\GenerateResource.write.1.tlog
