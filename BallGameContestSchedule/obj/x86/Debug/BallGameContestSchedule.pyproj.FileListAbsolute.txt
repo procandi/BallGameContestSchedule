@@ -15,3 +15,5 @@ D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\BallGameCon
 D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\BallGameContestSchedule.MainForm.resources
 D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\BallGameContestSchedule.frmTeamConfig.resources
+D:\git\BallGameContestSchedule\BallGameContestSchedule\obj\x86\Debug\BallGameContestSchedule.frmSort.resources

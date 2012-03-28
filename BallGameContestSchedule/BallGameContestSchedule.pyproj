@@ -62,6 +62,7 @@
     <Compile Include="frmField.py" />
     <Compile Include="frmSort.py" />
     <Compile Include="frmTeam.py" />
+    <Compile Include="frmTeamConfig.py" />
     <Compile Include="MainForm.py" />
     <Compile Include="modFile.py" />
     <Compile Include="modOffice.py" />
@@ -75,8 +76,14 @@
     <EmbeddedResource Include="frmField.resx">
       <DependentUpon>frmField.py</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSort.resx">
+      <DependentUpon>frmSort.py</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTeam.resx">
       <DependentUpon>frmTeam.py</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeamConfig.resx">
+      <DependentUpon>frmTeamConfig.py</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.py</DependentUpon>

@@ -1,9 +1,13 @@
 ﻿
+import sys
+
 class modFile:	
-	def __init__(self,fname="template",fbody=""):
+	def __init__(self):
 		pass
 	
-	def readfile(self,fname):
+	def readfile(self,fname="template"):
+		sys.setdefaultencoding("utf-8")
+		
 		result=""
 		f=open(fname,"r")
 		while True:
@@ -14,7 +18,9 @@ class modFile:
 		f.close()
 		return result
 	
-	def writefile(self,fname,fbody):
+	def writefile(self,fname="template",fbody=""):
+		sys.setdefaultencoding("utf-8")
+		
 		f=open(fname,"w")
 		f.write(fbody)
 		f.close()

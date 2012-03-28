@@ -27,7 +27,7 @@ class frmField(Form):
 		# 
 		# btnClose
 		# 
-		self._btnClose.Location = System.Drawing.Point(91, 225)
+		self._btnClose.Location = System.Drawing.Point(89, 177)
 		self._btnClose.Name = "btnClose"
 		self._btnClose.Size = System.Drawing.Size(100, 25)
 		self._btnClose.TabIndex = 0
@@ -74,7 +74,7 @@ class frmField(Form):
 		# frmField
 		# 
 		self.BackColor = System.Drawing.Color.Black
-		self.ClientSize = System.Drawing.Size(284, 262)
+		self.ClientSize = System.Drawing.Size(284, 217)
 		self.Controls.Add(self._dgvf)
 		self.Controls.Add(self._btnDel)
 		self.Controls.Add(self._btnSav)
@@ -95,6 +95,8 @@ class frmField(Form):
 		val=result.split("\r\n")
 		for v in val:
 			if v is None:
+				break
+			if v=="":
 				break
 
 			#make regexp to replace heaer name
@@ -122,8 +124,7 @@ class frmField(Form):
 			fbody+=str(i)
 			fbody+="="
 			fbody+=v.Cells[0].Value
-			if i+2<self._dgvf.Rows.Count:
-				fbody+="\r\n"
+			fbody+="\r\n"
 			i+=1
 		
 		#write file body		
