@@ -114,11 +114,7 @@ class frmTeamConfig(Form):
 				#only get data
 				data=v.split("-")
 				
-				if len(data)>0:
-					fbody+=data[0]
-				else:
-					fbody+=v
-				fbody+="-"
+				fbody+=data[0]
 				fbody+=self._lblDate.Text
 			else:
 				fbody+=v
