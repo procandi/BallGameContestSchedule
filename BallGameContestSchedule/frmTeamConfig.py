@@ -9,8 +9,6 @@ import re
 
 #my self module to process some question
 import modFile
-import modOffice
-import modPublic
 
 #my self form
 import frmTeam

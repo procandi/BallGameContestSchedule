@@ -9,8 +9,6 @@ import re
 
 #my self module to process some question
 import modFile
-import modOffice
-import modPublic
 
 class frmField(Form):
 	def __init__(self):

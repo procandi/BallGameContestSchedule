@@ -4,11 +4,6 @@ import System.Windows.Forms
 from System.Drawing import *
 from System.Windows.Forms import *
 
-#my self module to process some question
-import modFile
-import modOffice
-import modPublic
-
 #my self form
 import frmTeam
 import frmSort

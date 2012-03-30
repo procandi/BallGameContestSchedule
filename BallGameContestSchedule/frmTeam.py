@@ -9,8 +9,6 @@ import re
 
 #my self module to process some question
 import modFile
-import modOffice
-import modPublic
 
 #my self form
 import frmTeamConfig
@@ -147,6 +145,7 @@ class frmTeam(Form):
 			sdv=re.search(r"-.*",v)
 			v=re.sub(r",.*","",v)
 			
+			#add data to datagridview
 			self._dgvt.Rows.Add()
 			self._dgvt.Rows[i].Cells[0].Value=v
 			if rev.group(0)!="":

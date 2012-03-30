@@ -67,6 +67,7 @@
     <Compile Include="modFile.py" />
     <Compile Include="modOffice.py" />
     <Compile Include="modPublic.py" />
+    <Compile Include="modUserInfo.py" />
     <Compile Include="Program.py" />
   </ItemGroup>
   <ItemGroup>

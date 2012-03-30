@@ -5,10 +5,13 @@ import System.Windows.Forms
 from System.Drawing import *
 from System.Windows.Forms import *
 
+import re
+
 #my self module to process some question
 import modFile
 import modOffice
 import modPublic
+import modUserInfo
 
 class frmSort(Form):
 	def __init__(self):
@@ -118,6 +121,8 @@ class frmSort(Form):
 		pass
 
 	def FrmSortLoad(self, sender, e):
+		userinfo=modUserInfo.modUserInfo()
+		userinfo.loadbaseinfo()
 		pass
 
 	def BtnCloseClick(self, sender, e):
