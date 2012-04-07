@@ -22,6 +22,7 @@ class frmTeam(Form):
 		self._btnSav = System.Windows.Forms.Button()
 		self._btnClose = System.Windows.Forms.Button()
 		self._dgvt = System.Windows.Forms.DataGridView()
+		self._tshow = System.Windows.Forms.DataGridViewCheckBoxColumn()
 		self._tname = System.Windows.Forms.DataGridViewTextBoxColumn()
 		self._tClass = System.Windows.Forms.DataGridViewComboBoxColumn()
 		self._tGood = System.Windows.Forms.DataGridViewComboBoxColumn()
@@ -32,7 +33,7 @@ class frmTeam(Form):
 		# 
 		# btnDel
 		# 
-		self._btnDel.Location = System.Drawing.Point(496, 173)
+		self._btnDel.Location = System.Drawing.Point(595, 173)
 		self._btnDel.Name = "btnDel"
 		self._btnDel.Size = System.Drawing.Size(55, 28)
 		self._btnDel.TabIndex = 8
@@ -52,7 +53,7 @@ class frmTeam(Form):
 		# 
 		# btnClose
 		# 
-		self._btnClose.Location = System.Drawing.Point(230, 176)
+		self._btnClose.Location = System.Drawing.Point(280, 176)
 		self._btnClose.Name = "btnClose"
 		self._btnClose.Size = System.Drawing.Size(100, 25)
 		self._btnClose.TabIndex = 5
@@ -64,7 +65,8 @@ class frmTeam(Form):
 		# 
 		self._dgvt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		self._dgvt.Columns.AddRange(System.Array[System.Windows.Forms.DataGridViewColumn](
-			[self._tname,
+			[self._tshow,
+			self._tname,
 			self._tClass,
 			self._tGood,
 			self._tschedueldate,
@@ -72,9 +74,14 @@ class frmTeam(Form):
 		self._dgvt.Location = System.Drawing.Point(8, 13)
 		self._dgvt.Name = "dgvt"
 		self._dgvt.RowTemplate.Height = 24
-		self._dgvt.Size = System.Drawing.Size(543, 154)
+		self._dgvt.Size = System.Drawing.Size(642, 154)
 		self._dgvt.TabIndex = 10
 		self._dgvt.CellContentClick += self.DgvtCellContentClick
+		# 
+		# tshow
+		# 
+		self._tshow.HeaderText = "是否列入排賽"
+		self._tshow.Name = "tshow"
 		# 
 		# tname
 		# 
@@ -114,7 +121,7 @@ class frmTeam(Form):
 		# frmTeam
 		# 
 		self.BackColor = System.Drawing.Color.Black
-		self.ClientSize = System.Drawing.Size(559, 217)
+		self.ClientSize = System.Drawing.Size(660, 217)
 		self.Controls.Add(self._dgvt)
 		self.Controls.Add(self._btnDel)
 		self.Controls.Add(self._btnSav)
@@ -141,19 +148,22 @@ class frmTeam(Form):
 
 			#make regexp to replace head, and formated data
 			v=re.sub(r"team.+=","",v)
-			rev=re.search(r",[^-]*",v)
-			sdv=re.search(r"-.*",v)
-			v=re.sub(r",.*","",v)
-			
+			vd=v.split('-')
+			va0=vd[0].split(',')
+
 			#add data to datagridview
 			self._dgvt.Rows.Add()
-			self._dgvt.Rows[i].Cells[0].Value=v
-			if rev.group(0)!="":
-				revarr=rev.group(0).split(',')
-				self._dgvt.Rows[i].Cells[1].Value=revarr[1].strip()
-				self._dgvt.Rows[i].Cells[2].Value=revarr[2].strip()
-			if sdv.group(0)!="":
-				self._dgvt.Rows[i].Cells[3].Value=sdv.group(0).strip().replace("-","")
+			if va0[1]!="":
+				for j in range(4):	
+					if j==0:
+						if va0[j]=="1":
+							self._dgvt.Rows[i].Cells[j].Value=True
+						elif va0[j]=="0":
+							self._dgvt.Rows[i].Cells[j].Value=False
+					else:
+						self._dgvt.Rows[i].Cells[j].Value=va0[j]
+			
+				self._dgvt.Rows[i].Cells[4].Value=vd[1]
 			
 			i+=1
 			
@@ -170,16 +180,21 @@ class frmTeam(Form):
 			fbody+="team"
 			fbody+=str(i)
 			fbody+="="
-			fbody+=v.Cells[0].Value
+			if v.Cells[0].Value==True:
+				fbody+="1"
+			elif v.Cells[0].Value==False:
+				fbody+="0"
 			fbody+=","
 			fbody+=v.Cells[1].Value
 			fbody+=","
 			fbody+=v.Cells[2].Value
+			fbody+=","
+			fbody+=v.Cells[3].Value
 			fbody+="-"
-			if v.Cells[3].Value is None:
+			if v.Cells[4].Value is None:
 				fbody+=""
 			else:
-				fbody+=v.Cells[3].Value
+				fbody+=v.Cells[4].Value
 			fbody+="\r\n"
 			i+=1
 		
@@ -208,16 +223,21 @@ class frmTeam(Form):
 			fbody+="team"
 			fbody+=str(i)
 			fbody+="="
-			fbody+=v.Cells[0].Value
+			if v.Cells[0].Value==True:
+				fbody+="1"
+			elif v.Cells[0].Value==False:
+				fbody+="0"
 			fbody+=","
 			fbody+=v.Cells[1].Value
 			fbody+=","
 			fbody+=v.Cells[2].Value
+			fbody+=","
+			fbody+=v.Cells[3].Value
 			fbody+="-"
-			if v.Cells[3].Value is None:
+			if v.Cells[4].Value is None:
 				fbody+=""
 			else:
-				fbody+=v.Cells[3].Value
+				fbody+=v.Cells[4].Value
 			fbody+="\r\n"
 			i+=1
 		
@@ -225,7 +245,7 @@ class frmTeam(Form):
 		file=modFile.modFile()
 		file.writefile("teamdata.txt",fbody)
 		
-		teamconfig=frmTeamConfig.frmTeamConfig(self._dgvt.CurrentRow.Index,self._dgvt.Rows[self._dgvt.CurrentRow.Index].Cells[3].Value)
+		teamconfig=frmTeamConfig.frmTeamConfig(self._dgvt.CurrentRow.Index,self._dgvt.Rows[self._dgvt.CurrentRow.Index].Cells[4].Value)
 		teamconfig.Show()
 		self.Close()
 		pass
