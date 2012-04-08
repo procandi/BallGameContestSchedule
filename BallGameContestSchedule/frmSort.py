@@ -7,6 +7,11 @@ from System.Windows.Forms import *
 
 import re
 
+#import base python module
+import sys
+sys.path.append("d:\python25\lib")
+import os
+
 #my self module to process some question
 import modFile
 import modOffice
@@ -110,6 +115,77 @@ class frmSort(Form):
 		self._pResult.ResumeLayout(False)
 		self.ResumeLayout(False)
 
+	def loadbaseinfo(self):
+		#load file body
+		file=modFile.modFile()
+		result=file.readfile("fielddata.txt")
+		
+		#made field array
+		self.field=range(100)
+		
+		#add field data to origin data
+		line=result.split("\r\n")
+		i=0
+		for v in line:
+			v=re.sub(r"field.+=","",v)
+			self.field[i]=v
+			i+=1
+		
+		
+		#load file body
+		file=modFile.modFile()
+		result=file.readfile("teamdata.txt")
+		
+		#made team struct and array
+		self.team=range(100)
+		for i in range(100):
+			self.team[i]=modPublic.steam()
+		
+		#add team data to origin data
+		line=result.split("\r\n")
+		i=0
+		for v in line:
+			if v is None:
+				break
+			if v=="":
+				break
+			
+			v=re.sub(r"team.+=","",v)
+			vd=v.split('-')
+			va0=vd[0].split(',')
+			va1=vd[1].split(',')
+			
+			self.team[i].name=va0[0]
+			self.team[i].field=va0[1]
+			self.team[i].good=va0[2]
+			for j in range(100):
+				if j<len(va1)-1:	#need subtract one, because date value will have one blank data.
+					self.team[i].schedule[j]=va1[j]
+				else:
+					break
+			i+=1
+			
+	def sort(self):
+		#for f in len(self.field):
+		#	for i in len(self.team):
+		#		for j in len(self.team):
+		#			break
+		pass
+	
+	def exportexcel(self):
+		#app = win32com.client.Dispatch("Excel.Application")
+		#app.visible = True
+		#workbook = app.Workbooks.Add()
+		#workbook.Sheets[0].Name = "test"
+		#sheet = workbook.Sheets[0]
+		#sheet.Range("A1").Value = "這是A1"
+		#sheet.Cells(3, 2).Value = "Hi Alarm"  #==B3
+		#sheet.Cells(3, 2).AddComment()
+		#sheet.Cells(3, 2).Comment.Shape.Width = 150
+		#sheet.Cells(3, 2).Comment.Shape.Height = 160
+		#sheet.Cells(3, 2).Comment.Text("這是註解")
+		pass
+
 	def BtnHandleClick(self, sender, e):
 		self._pResult.Visible=True
 		pass
@@ -121,8 +197,10 @@ class frmSort(Form):
 		pass
 
 	def FrmSortLoad(self, sender, e):
-		userinfo=modUserInfo.modUserInfo()
-		userinfo.loadbaseinfo()
+		self.loadbaseinfo()
+		self.sort()
+		#self.exportexcel()
+		os.system("ruby -Ku D:\\aa.rb")
 		pass
 
 	def BtnCloseClick(self, sender, e):

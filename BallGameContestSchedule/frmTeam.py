@@ -213,39 +213,41 @@ class frmTeam(Form):
 		pass
 
 	def DgvtCellContentClick(self, sender, e):
-		#load data from datagridview
-		i=0
-		fbody=""
-		for v in self._dgvt.Rows:
-			if i+1==self._dgvt.Rows.Count:
-				break
-
-			fbody+="team"
-			fbody+=str(i)
-			fbody+="="
-			if v.Cells[0].Value==True:
-				fbody+="1"
-			elif v.Cells[0].Value==False:
-				fbody+="0"
-			fbody+=","
-			fbody+=v.Cells[1].Value
-			fbody+=","
-			fbody+=v.Cells[2].Value
-			fbody+=","
-			fbody+=v.Cells[3].Value
-			fbody+="-"
-			if v.Cells[4].Value is None:
-				fbody+=""
-			else:
-				fbody+=v.Cells[4].Value
-			fbody+="\r\n"
-			i+=1
-		
-		#write file body		
-		file=modFile.modFile()
-		file.writefile("teamdata.txt",fbody)
-		
-		teamconfig=frmTeamConfig.frmTeamConfig(self._dgvt.CurrentRow.Index,self._dgvt.Rows[self._dgvt.CurrentRow.Index].Cells[4].Value)
-		teamconfig.Show()
-		self.Close()
+		#that sure user is click configure button
+		if self._dgvt.CurrentCell.ColumnIndex==5:
+			#load data from datagridview
+			i=0
+			fbody=""
+			for v in self._dgvt.Rows:
+				if i+1==self._dgvt.Rows.Count:
+					break
+	
+				fbody+="team"
+				fbody+=str(i)
+				fbody+="="
+				if v.Cells[0].Value==True:
+					fbody+="1"
+				elif v.Cells[0].Value==False:
+					fbody+="0"
+				fbody+=","
+				fbody+=v.Cells[1].Value
+				fbody+=","
+				fbody+=v.Cells[2].Value
+				fbody+=","
+				fbody+=v.Cells[3].Value
+				fbody+="-"
+				if v.Cells[4].Value is None:
+					fbody+=""
+				else:
+					fbody+=v.Cells[4].Value
+				fbody+="\r\n"
+				i+=1
+			
+			#write file body		
+			file=modFile.modFile()
+			file.writefile("teamdata.txt",fbody)
+			
+			teamconfig=frmTeamConfig.frmTeamConfig(self._dgvt.CurrentRow.Index,self._dgvt.Rows[self._dgvt.CurrentRow.Index].Cells[4].Value)
+			teamconfig.Show()
+			self.Close()
 		pass
