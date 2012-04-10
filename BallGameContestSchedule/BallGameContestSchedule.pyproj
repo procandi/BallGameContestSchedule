@@ -59,16 +59,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="export_schedule.py" />
     <Compile Include="frmField.py" />
     <Compile Include="frmSort.py" />
     <Compile Include="frmTeam.py" />
     <Compile Include="frmTeamConfig.py" />
     <Compile Include="MainForm.py" />
+    <Compile Include="modDate.py" />
     <Compile Include="modFile.py" />
     <Compile Include="modOffice.py" />
     <Compile Include="modPublic.py" />
     <Compile Include="modUserInfo.py" />
     <Compile Include="Program.py" />
+    <Compile Include="README" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

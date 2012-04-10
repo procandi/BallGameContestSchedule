@@ -1,4 +1,6 @@
-﻿import re
+﻿# -*- coding: utf-8 -*-
+
+import re
 
 #my self module to process some question
 import modUserInfo
