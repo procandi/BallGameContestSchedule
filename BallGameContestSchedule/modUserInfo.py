@@ -19,9 +19,9 @@ class modUserInfo:
 		self.field=range(100)
 		for i in range(100):
 			self.field[i]=modPublic.sfield()
-			for j in range(100):
+			for j in range(14):
 				self.field[i].date[j]=modPublic.sschedule()
-				
+
 		#add field data to origin data
 		line=result.split("\r\n")
 		i=0
