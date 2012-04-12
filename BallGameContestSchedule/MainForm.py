@@ -83,6 +83,7 @@ class MainForm(Form):
 		self.Controls.Add(self._panel1)
 		self.Name = "MainForm"
 		self.Text = "主頁面"
+		self.Load += self.MainFormLoad
 		self._panel1.ResumeLayout(False)
 		self.ResumeLayout(False)
 		self.PerformLayout()
@@ -100,4 +101,7 @@ class MainForm(Form):
 	def BtnSortClick(self, sender, e):
 		sort=frmSort.frmSort()
 		sort.Show()
+		pass
+
+	def MainFormLoad(self, sender, e):
 		pass

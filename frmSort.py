@@ -16,6 +16,9 @@ import os
 
 #my self module to process some question
 import modFile
+import modOffice
+import modPublic
+import modUserInfo
 
 class frmSort(Form):
 	def __init__(self):

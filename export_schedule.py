@@ -3,7 +3,6 @@
 import re
 import sys
 import datetime
-import random
 
 import win32com.client
 import win32ui
@@ -44,38 +43,22 @@ for i in range(userinfo.team_count):
 			print userinfo.field[i].date[d]
 			print userinfo.team[i].name.encode("big5") + " VS " + userinfo.team[j].name.encode("big5")
 			
-			#field first
-			#if k<userinfo.field_count:
-			#	k+=1	#if field is not use end, then use other field to start contest.
-			#else:
-			#	if n<count:
-			#		k=0		#if all field one round is full, then user other rounds.
-			#		n+=1
-			#	else:
-			#		k=0		#if all field and all round is full, then user other days.
-			#		d+=1
-			#		n=0
-			#		now=next	#update date information
-			#		next=next+delta
-			
-			#round first
-			if n<count:
-				n+=1	#if round is not use end, then use other round to start contest.
+			if k<userinfo.field_count:
+				k+=1	#if field is not use end, then use other field to start contest.
 			else:
-				if k<userinfo.field_count:
-					n=0		#if one field all round is full, then user other fields.
-					k+=1
+				if n<count:
+					k=0		#if all field one round is full, then user other rounds.
+					n+=1
 				else:
-					n=0		#if all field and all round is full, then user other days.
+					k=0		#if all field and all round is full, then user other days.
 					d+=1
-					k=0
+					n=0
 					now=next	#update date information
-					next=next+delta					
+					next=next+delta							
 #d is need skip.#
 
 
 #random result
-#print random.randint(1,3)
 
 #change black list date
 for m in range(userinfo.team_count):	#team number
@@ -88,10 +71,10 @@ for m in range(userinfo.team_count):	#team number
 						
 						for k in range(count):    #round number
 							if userinfo.field[j].teamA[i][k]==userinfo.team[m].name:	#check team is in what's round
-								#swap with last date first round
+								#swap with next date first round
 								v=userinfo.field[j].teamA[i][k]
-								userinfo.field[j].teamA[i][k]=userinfo.field[j].teamA[d][k]
-								userinfo.field[j].teamA[d][k]=t
+								userinfo.field[j].teamA[i][k]=userinfo.field[j].teamA[i+1][k]
+								userinfo.field[j].teamA[i+1][k]=t
 			
 			
 #up to up, down to down
