@@ -127,7 +127,7 @@ class frmSort(Form):
 		pass
 
 	def BtnRecordExcelClick(self, sender, e):
-		os.system(pypath+"\python.exe export_result.py")
+		#os.system(pypath+"\python.exe export_result.py")
 		pass
 
 	def FrmSortLoad(self, sender, e):

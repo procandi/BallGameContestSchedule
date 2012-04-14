@@ -6,6 +6,7 @@ import re
 import modFile
 import modPublic
 
+
 class modUserInfo:
 	def __init__(self):
 		pass
@@ -28,7 +29,7 @@ class modUserInfo:
 		i=0
 		for v in line:
 			v=re.sub(r"field.+=","",v)
-			self.field[i].name=v
+			self.field[i].name=v.encode("big5")
 			i+=1
 		self.field_count=i
 		
@@ -57,9 +58,9 @@ class modUserInfo:
 			va1=vd[1].split(',')
 			
 			self.team[i].ingame=va0[0]
-			self.team[i].name=va0[1]
-			self.team[i].field=va0[2]
-			self.team[i].good=va0[3]
+			self.team[i].name=va0[1].encode("big5")
+			self.team[i].field=va0[2].encode("big5")
+			self.team[i].good=va0[3].encode("big5")
 			for j in range(100):
 				if j<len(va1)-1:	#need subtract one, because date value will have one blank data.
 					self.team[i].schedule[j]=va1[j]
