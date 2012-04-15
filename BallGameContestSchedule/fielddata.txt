@@ -1,4 +1,3 @@
-field0=超級大球場
-field1=普通大球場
-field2=有點大球場
-field3=不太大球場
+field0=A球場
+field1=B球場
+field2=C球場

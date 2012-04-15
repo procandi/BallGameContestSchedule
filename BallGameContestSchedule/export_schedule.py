@@ -14,12 +14,10 @@ import modOffice
 import modPublic
 
 
-#load template
-public=modPublic.modPublic()
-
-#load base data
+#load template and base data
 userinfo=modUserInfo.modUserInfo()
 userinfo.loadbaseinfo()
+userinfo.loadtemplate()
 
 #get begin date
 begin_date = datetime.date(int(userinfo.begin_year),int(userinfo.begin_month),int(userinfo.begin_day))
@@ -122,22 +120,22 @@ for i in range(d+1):	#day number
 		for k in range(count):	#round number
 			for e in range(userinfo.team_count):
 				if userinfo.field[j].teamA[i][k]==userinfo.team[e].name:	#if this AM team name is equal this team name profile
-					if userinfo.team[e].good==public.AM and k>4:	#if this team favorite AM, but it is contest in PM	
+					if userinfo.team[e].good==userinfo.AM and k>4:	#if this team favorite AM, but it is contest in PM	
 						for n in 5:	#searh this day AM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamA[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
-									if userinfo.team[m].good==public.PM or userinfo.team[m].good==public.ALL:	#and this AM team is favorite PM or ALL										
+									if userinfo.team[m].good==userinfo.PM or userinfo.team[m].good==userinfo.ALL:	#and this AM team is favorite PM or ALL										
 										#swap round with this team
 										t=userinfo.field[j].teamA[i][k]
 										userinfo.field[j].teamA[i][k]=userinfo.field[j].teamA[i][n]
 										userinfo.field[j].teamA[i][n]=t
 										print "c1"
 										
-					elif userinfo.team[e].good==public.PM and k<5:	#if this team favorite PM, but it is contest in AM
+					elif userinfo.team[e].good==userinfo.PM and k<5:	#if this team favorite PM, but it is contest in AM
 						for n in range(5,10):	#searh this day PM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamA[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
-									if userinfo.team[m].good==public.AM or userinfo.team[m].good==public.ALL:	#and this AM team is favorite AM or ALL										
+									if userinfo.team[m].good==userinfo.AM or userinfo.team[m].good==userinfo.ALL:	#and this AM team is favorite AM or ALL										
 										#swap round with this team
 										t=userinfo.field[j].teamA[i][k]
 										userinfo.field[j].teamA[i][k]=userinfo.field[j].teamA[i][n]
@@ -145,22 +143,22 @@ for i in range(d+1):	#day number
 										print "c2"
 				
 				if userinfo.field[j].teamB[i][k]==userinfo.team[e].name:	#if this AM team name is equal this team name profile
-					if userinfo.team[e].good==public.AM and k>4:	#if this team favorite AM, but it is contest in PM	
+					if userinfo.team[e].good==userinfo.AM and k>4:	#if this team favorite AM, but it is contest in PM	
 						for n in 5:	#searh this day AM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamB[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
-									if userinfo.team[m].good==public.PM or userinfo.team[m].good==public.ALL:	#and this AM team is favorite PM or ALL										
+									if userinfo.team[m].good==userinfo.PM or userinfo.team[m].good==userinfo.ALL:	#and this AM team is favorite PM or ALL										
 										#swap round with this team
 										t=userinfo.field[j].teamB[i][k]
 										userinfo.field[j].teamB[i][k]=userinfo.field[j].teamB[i][n]
 										userinfo.field[j].teamB[i][n]=t
 										print "c3"
 					
-					elif userinfo.team[e].good==public.PM and k<5:	#if this team favorite PM, but it is contest in AM
+					elif userinfo.team[e].good==userinfo.PM and k<5:	#if this team favorite PM, but it is contest in AM
 						for n in range(5,10):	#searh this day PM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamB[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
-									if userinfo.team[m].good==public.AM or userinfo.team[m].good==public.ALL:	#and this AM team is favorite AM or ALL										
+									if userinfo.team[m].good==userinfo.AM or userinfo.team[m].good==userinfo.ALL:	#and this AM team is favorite AM or ALL										
 										#swap round with this team
 										t=userinfo.field[j].teamB[i][k]
 										userinfo.field[j].teamB[i][k]=userinfo.field[j].teamB[i][n]

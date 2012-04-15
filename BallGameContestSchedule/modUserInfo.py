@@ -11,6 +11,16 @@ class modUserInfo:
 	def __init__(self):
 		pass
 	
+	def loadtemplate(self):	
+		#load template data to variant
+		self.ALL="皆可".encode("big5")
+		self.AM="上午場".encode("big5")
+		self.PM="下午場".encode("big5")
+		self.TypeA="龍組".encode("big5")
+		self.TypeB="馬組".encode("big5")
+		self.TypeC="健康組".encode("big5")
+		self.TypdD="快樂組".encode("big5")
+
 	def loadbaseinfo(self):
 		#load file body
 		file=modFile.modFile()
