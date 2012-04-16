@@ -21,7 +21,7 @@ class modUserInfo:
 		self.TypeC="健康組".encode("big5")
 		self.TypdD="快樂組".encode("big5")
 
-	def loadbaseinfo(self):
+	def loadbaseinfo(self,type=0):
 		#load file body
 		file=modFile.modFile()
 		result=file.readfile("fielddata.txt")
@@ -41,7 +41,15 @@ class modUserInfo:
 			v=re.sub(r"field.+=","",v)
 			self.field[i].name=v.encode("big5")
 			i+=1
-		self.field_count=i
+		#if type is 0 then this is a all export
+		#if type is 1 then this is a professional contest export
+		#if type is 2 then this is a gernel contest export
+		if type==0:
+			self.field_count=i
+		elif type==1:
+			self.field_count=i-1
+		elif type==2:
+			self.field_count=1
 		
 		
 		#load file body

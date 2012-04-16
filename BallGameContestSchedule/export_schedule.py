@@ -232,6 +232,7 @@ for i in range(d+1):    #day number
 			office.sheet.Cells(row, col+1).Value=userinfo.field[j].name
 		row+=1
 		
+		#set excel value
 		for k in range(count):    #round number
 			v=re.sub(r"\d","",str(userinfo.field[j].teamA[i][k]))
 			if v!="":
@@ -241,9 +242,6 @@ for i in range(d+1):    #day number
 					office.sheet.Cells(row, col).Value=(str(k+7)+":30")
 				office.sheet.Cells(row, col+1).Value=userinfo.field[j].teamA[i][k]
 				office.sheet.Cells(row, col+2).Value=userinfo.field[j].teamB[i][k]
-				#office.sheet.Cells(row, col+3).Value=str(j)
-				#office.sheet.Cells(row, col+4).Value=str(i)
-				#office.sheet.Cells(row, col+5).Value=str(k)
 				row+=1
 
 
