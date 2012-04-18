@@ -50,6 +50,9 @@ class modUserInfo:
 			self.field_count=i-1
 		elif type==2:
 			self.field_count=1
+			t=self.field[i-2].name
+			self.field[0].name=self.field[i-2].name
+			self.field[0].name=t
 		
 		
 		#load file body
@@ -75,16 +78,18 @@ class modUserInfo:
 			va0=vd[0].split(',')
 			va1=vd[1].split(',')
 			
-			self.team[i].ingame=va0[0]
-			self.team[i].name=va0[1].encode("big5")
-			self.team[i].field=va0[2].encode("big5")
-			self.team[i].good=va0[3].encode("big5")
-			for j in range(100):
-				if j<len(va1)-1:	#need subtract one, because date value will have one blank data.
-					self.team[i].schedule[j]=va1[j]
-				else:
-					break
-			i+=1
+			#class team
+			if type==0 or (type==1 and (va0[2].encode("big5")=="龍組".encode("big5") or va0[2].encode("big5")=="馬組".encode("big5"))) or (type==2 and (va0[2].encode("big5")=="健康組".encode("big5") or va0[2].encode("big5")=="快樂組".encode("big5"))):
+				self.team[i].ingame=va0[0]
+				self.team[i].name=va0[1].encode("big5")
+				self.team[i].field=va0[2].encode("big5")
+				self.team[i].good=va0[3].encode("big5")
+				for j in range(100):
+					if j<len(va1)-1:	#need subtract one, because date value will have one blank data.
+						self.team[i].schedule[j]=va1[j]
+					else:
+						break
+				i+=1
 		self.team_count=i
 		
 		

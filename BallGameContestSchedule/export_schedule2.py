@@ -16,7 +16,7 @@ import modPublic
 
 #load template and base data
 userinfo=modUserInfo.modUserInfo()
-userinfo.loadbaseinfo()
+userinfo.loadbaseinfo(2)
 userinfo.loadtemplate()
 
 #get begin date
@@ -121,7 +121,7 @@ for i in range(d+1):	#day number
 			for e in range(userinfo.team_count):
 				if userinfo.field[j].teamA[i][k]==userinfo.team[e].name:	#if this AM team name is equal this team name profile
 					if userinfo.team[e].good==userinfo.AM and k>4:	#if this team favorite AM, but it is contest in PM	
-						for n in 5:	#searh this day AM
+						for n in range(5):	#searh this day AM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamA[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
 									if userinfo.team[m].good==userinfo.PM or userinfo.team[m].good==userinfo.ALL:	#and this AM team is favorite PM or ALL										
@@ -144,7 +144,7 @@ for i in range(d+1):	#day number
 				
 				if userinfo.field[j].teamB[i][k]==userinfo.team[e].name:	#if this AM team name is equal this team name profile
 					if userinfo.team[e].good==userinfo.AM and k>4:	#if this team favorite AM, but it is contest in PM	
-						for n in 5:	#searh this day AM
+						for n in range(5):	#searh this day AM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamB[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
 									if userinfo.team[m].good==userinfo.PM or userinfo.team[m].good==userinfo.ALL:	#and this AM team is favorite PM or ALL										

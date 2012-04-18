@@ -16,7 +16,7 @@ import modPublic
 
 #load template and base data
 userinfo=modUserInfo.modUserInfo()
-userinfo.loadbaseinfo()
+userinfo.loadbaseinfo(1)
 userinfo.loadtemplate()
 
 #get begin date
@@ -46,32 +46,32 @@ for i in range(userinfo.team_count):
 			print userinfo.team[i].name + " VS " + userinfo.team[j].name
 			
 			#field first
-			#if k<userinfo.field_count:
-			#	k+=1	#if field is not use end, then use other field to start contest.
-			#else:
-			#	if n<count:
-			#		k=0		#if all field one round is full, then user other rounds.
-			#		n+=1
-			#	else:
-			#		k=0		#if all field and all round is full, then user other days.
-			#		d+=1
-			#		n=0
-			#		now=next	#update date information
-			#		next=next+delta
+			if k<userinfo.field_count:
+				k+=1	#if field is not use end, then use other field to start contest.
+			else:
+				if n<count:
+					k=0		#if all field one round is full, then user other rounds.
+					n+=1
+				else:
+					k=0		#if all field and all round is full, then user other days.
+					d+=1
+					n=0
+					now=next	#update date information
+					next=next+delta
 			
 			#round first
-			if n<count:
-				n+=1	#if round is not use end, then use other round to start contest.
-			else:
-				if k<userinfo.field_count:
-					n=0		#if one field all round is full, then user other fields.
-					k+=1
-				else:
-					n=0		#if all field and all round is full, then user other days.
-					d+=1
-					k=0
-					now=next	#update date information
-					next=next+delta					
+			#if n<count:
+			#	n+=1	#if round is not use end, then use other round to start contest.
+			#else:
+			#	if k<userinfo.field_count:
+			#		n=0		#if one field all round is full, then user other fields.
+			#		k+=1
+			#	else:
+			#		n=0		#if all field and all round is full, then user other days.
+			#		d+=1
+			#		k=0
+			#		now=next	#update date information
+			#		next=next+delta					
 #d is need skip.#
 
 
@@ -121,7 +121,7 @@ for i in range(d+1):	#day number
 			for e in range(userinfo.team_count):
 				if userinfo.field[j].teamA[i][k]==userinfo.team[e].name:	#if this AM team name is equal this team name profile
 					if userinfo.team[e].good==userinfo.AM and k>4:	#if this team favorite AM, but it is contest in PM	
-						for n in 5:	#searh this day AM
+						for n in range(5):	#searh this day AM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamA[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
 									if userinfo.team[m].good==userinfo.PM or userinfo.team[m].good==userinfo.ALL:	#and this AM team is favorite PM or ALL										
@@ -144,7 +144,7 @@ for i in range(d+1):	#day number
 				
 				if userinfo.field[j].teamB[i][k]==userinfo.team[e].name:	#if this AM team name is equal this team name profile
 					if userinfo.team[e].good==userinfo.AM and k>4:	#if this team favorite AM, but it is contest in PM	
-						for n in 5:	#searh this day AM
+						for n in range(5):	#searh this day AM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamB[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
 									if userinfo.team[m].good==userinfo.PM or userinfo.team[m].good==userinfo.ALL:	#and this AM team is favorite PM or ALL										
@@ -198,7 +198,31 @@ for m in range(userinfo.team_count):	#team number
 				
 			add=0
 		
-		
+
+#check this team is contest more then three per day
+#arrt=range(userinfo.team_count)
+#for i in range(userinfo.team_count):
+#	arrt[i]=0
+#	
+#for i in range(d+1):	#day number
+#	for j in range(userinfo.field_count):	#field number
+#		for k in range(count):	#round number
+#			for m in range(userinfo.team_count):	#team number
+#				if userinfo.team[m].name==userinfo.field[j].teamA[i][k]:
+#					arrt[m]+=1
+#					if arrt[m]>=3:
+#						#swap round with last day first team
+#						t=userinfo.field[j].teamA[i][k]
+#						userinfo.field[j].teamA[i][k]=userinfo.field[j].teamA[d][0]
+#						userinfo.field[j].teamA[d][0]=t
+#				elif  userinfo.team[m].name==userinfo.field[j].teamB[i][k]:
+#					arrt[m]+=1
+#					if arrt[m]>=3:
+#						#swap round with last day first team
+#						t=userinfo.field[j].teamB[i][k]
+#						userinfo.field[j].teamB[i][k]=userinfo.field[j].teamB[d][0]
+#						userinfo.field[j].teamB[d][0]=t
+				
 #check one team in same time
 for i in range(d+1):	#day number
 	for j in range(userinfo.field_count):	#field number
