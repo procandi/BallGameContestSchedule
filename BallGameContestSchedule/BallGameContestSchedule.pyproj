@@ -71,6 +71,7 @@
     <Compile Include="modFile.py" />
     <Compile Include="modOffice.py" />
     <Compile Include="modPublic.py" />
+    <Compile Include="modString.py" />
     <Compile Include="modUserInfo.py" />
     <Compile Include="Program.py" />
     <Compile Include="README" />
