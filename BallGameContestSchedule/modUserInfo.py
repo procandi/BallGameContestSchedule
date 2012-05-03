@@ -40,7 +40,8 @@ class modUserInfo:
 		for v in line:
 			v=re.sub(r"field.+=","",v)
 			self.field[i].name=v.encode("big5")
-			i+=1
+			if self.field[i].name!="":
+				i+=1
 		#if type is 0 then this is a all export
 		#if type is 1 then this is a professional contest export
 		#if type is 2 then this is a gernel contest export
@@ -48,7 +49,7 @@ class modUserInfo:
 			self.field_count=i
 		elif type==1:
 			self.field_count=i-1
-		elif type==2:
+		elif type>=2:
 			self.field_count=1
 			t=self.field[i-2].name
 			self.field[0].name=self.field[i-2].name
@@ -79,7 +80,7 @@ class modUserInfo:
 			va1=vd[1].split(',')
 			
 			#class team
-			if type==0 or (type==1 and (va0[2].encode("big5")=="龍組".encode("big5") or va0[2].encode("big5")=="馬組".encode("big5"))) or (type==2 and (va0[2].encode("big5")=="健康組".encode("big5") or va0[2].encode("big5")=="快樂組".encode("big5"))):
+			if type==0 or (type==1 and (va0[2].encode("big5")=="龍組".encode("big5") or va0[2].encode("big5")=="馬組".encode("big5"))) or (type==2 and (va0[2].encode("big5")=="健康組".encode("big5") or va0[2].encode("big5")=="快樂組".encode("big5"))) or (type==3 and va0[2].encode("big5")=="龍組".encode("big5")) or (type==4 and va0[2].encode("big5")=="馬組".encode("big5")) or (type==5 and va0[2].encode("big5")=="健康組".encode("big5")) or (type==6 and va0[2].encode("big5")=="快樂組".encode("big5")):
 				self.team[i].ingame=va0[0]
 				self.team[i].name=va0[1].encode("big5")
 				self.team[i].field=va0[2].encode("big5")
@@ -101,3 +102,10 @@ class modUserInfo:
 		self.begin_year=v[0]
 		self.begin_month=v[1]
 		self.begin_day=v[2]
+		
+		
+		#load file body
+		file=modFile.modFile()
+		result=file.readfile("countdata.txt")
+		
+		self.count=result

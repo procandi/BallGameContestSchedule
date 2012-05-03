@@ -21,3 +21,15 @@ class steam:	#in one team is need have those data
 		self.field=""
 		self.good=""
 		self.schedule=range(100)
+		
+class sarray:    #contest 
+	def __init__(self):
+		self.teamA=range(100)
+		self.teamB=range(100)
+		self.black=range(100)
+		self.isOver=range(100)
+		for i in range(100):
+			self.teamA[i]=range(100)
+			self.teamB[i]=range(100)
+			self.black[i]=range(100)
+			self.isOver[i]=range(100)

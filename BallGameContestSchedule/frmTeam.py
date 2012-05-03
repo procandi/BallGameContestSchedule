@@ -33,7 +33,7 @@ class frmTeam(Form):
 		# 
 		# btnDel
 		# 
-		self._btnDel.Location = System.Drawing.Point(595, 173)
+		self._btnDel.Location = System.Drawing.Point(596, 571)
 		self._btnDel.Name = "btnDel"
 		self._btnDel.Size = System.Drawing.Size(55, 28)
 		self._btnDel.TabIndex = 8
@@ -43,7 +43,7 @@ class frmTeam(Form):
 		# 
 		# btnSav
 		# 
-		self._btnSav.Location = System.Drawing.Point(8, 173)
+		self._btnSav.Location = System.Drawing.Point(9, 571)
 		self._btnSav.Name = "btnSav"
 		self._btnSav.Size = System.Drawing.Size(52, 28)
 		self._btnSav.TabIndex = 7
@@ -53,7 +53,7 @@ class frmTeam(Form):
 		# 
 		# btnClose
 		# 
-		self._btnClose.Location = System.Drawing.Point(280, 176)
+		self._btnClose.Location = System.Drawing.Point(281, 574)
 		self._btnClose.Name = "btnClose"
 		self._btnClose.Size = System.Drawing.Size(100, 25)
 		self._btnClose.TabIndex = 5
@@ -74,7 +74,7 @@ class frmTeam(Form):
 		self._dgvt.Location = System.Drawing.Point(8, 13)
 		self._dgvt.Name = "dgvt"
 		self._dgvt.RowTemplate.Height = 24
-		self._dgvt.Size = System.Drawing.Size(642, 154)
+		self._dgvt.Size = System.Drawing.Size(642, 552)
 		self._dgvt.TabIndex = 10
 		self._dgvt.CellContentClick += self.DgvtCellContentClick
 		# 
@@ -121,7 +121,7 @@ class frmTeam(Form):
 		# frmTeam
 		# 
 		self.BackColor = System.Drawing.Color.Black
-		self.ClientSize = System.Drawing.Size(660, 217)
+		self.ClientSize = System.Drawing.Size(660, 611)
 		self.Controls.Add(self._dgvt)
 		self.Controls.Add(self._btnDel)
 		self.Controls.Add(self._btnSav)

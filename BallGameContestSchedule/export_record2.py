@@ -16,7 +16,7 @@ string.Number2ABC(26)
 
 #load template and base data
 userinfo=modUserInfo.modUserInfo()
-userinfo.loadbaseinfo(3)
+userinfo.loadbaseinfo(4)
 userinfo.loadtemplate()
 
 #create excel
