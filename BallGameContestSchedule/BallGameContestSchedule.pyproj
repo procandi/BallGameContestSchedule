@@ -71,6 +71,7 @@
     <Compile Include="frmTeam.py" />
     <Compile Include="frmTeamConfig.py" />
     <Compile Include="MainForm.py" />
+    <Compile Include="modAlogorithm.py" />
     <Compile Include="modDate.py" />
     <Compile Include="modFile.py" />
     <Compile Include="modOffice.py" />
