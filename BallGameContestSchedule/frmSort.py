@@ -35,6 +35,10 @@ class frmSort(Form):
 		self._btnRecordExcel2 = System.Windows.Forms.Button()
 		self._btnRecordExcel3 = System.Windows.Forms.Button()
 		self._btnRecordExcel4 = System.Windows.Forms.Button()
+		self._btnContestExcel3 = System.Windows.Forms.Button()
+		self._btnContestExcel4 = System.Windows.Forms.Button()
+		self._label4 = System.Windows.Forms.Label()
+		self._label3 = System.Windows.Forms.Label()
 		self._pResult.SuspendLayout()
 		self.SuspendLayout()
 		# 
@@ -67,6 +71,10 @@ class frmSort(Form):
 		# pResult
 		# 
 		self._pResult.BackColor = System.Drawing.Color.Cyan
+		self._pResult.Controls.Add(self._label3)
+		self._pResult.Controls.Add(self._label4)
+		self._pResult.Controls.Add(self._btnContestExcel4)
+		self._pResult.Controls.Add(self._btnContestExcel3)
 		self._pResult.Controls.Add(self._btnRecordExcel4)
 		self._pResult.Controls.Add(self._btnRecordExcel3)
 		self._pResult.Controls.Add(self._btnRecordExcel2)
@@ -75,23 +83,23 @@ class frmSort(Form):
 		self._pResult.Controls.Add(self._btnContestExcel)
 		self._pResult.Location = System.Drawing.Point(23, 109)
 		self._pResult.Name = "pResult"
-		self._pResult.Size = System.Drawing.Size(273, 155)
+		self._pResult.Size = System.Drawing.Size(273, 246)
 		self._pResult.TabIndex = 3
 		self._pResult.Visible = False
 		# 
 		# btnContestExcel
 		# 
-		self._btnContestExcel.Location = System.Drawing.Point(8, 9)
+		self._btnContestExcel.Location = System.Drawing.Point(8, 47)
 		self._btnContestExcel.Name = "btnContestExcel"
 		self._btnContestExcel.Size = System.Drawing.Size(114, 29)
 		self._btnContestExcel.TabIndex = 0
-		self._btnContestExcel.Text = "輸出龍馬組賽程表"
+		self._btnContestExcel.Text = "輸出龍組賽程表"
 		self._btnContestExcel.UseVisualStyleBackColor = True
 		self._btnContestExcel.Click += self.BtnContestExcelClick
 		# 
 		# btnRecordExcel
 		# 
-		self._btnRecordExcel.Location = System.Drawing.Point(8, 74)
+		self._btnRecordExcel.Location = System.Drawing.Point(8, 164)
 		self._btnRecordExcel.Name = "btnRecordExcel"
 		self._btnRecordExcel.Size = System.Drawing.Size(114, 30)
 		self._btnRecordExcel.TabIndex = 1
@@ -111,11 +119,11 @@ class frmSort(Form):
 		# 
 		# btnContestExcel2
 		# 
-		self._btnContestExcel2.Location = System.Drawing.Point(128, 9)
+		self._btnContestExcel2.Location = System.Drawing.Point(128, 47)
 		self._btnContestExcel2.Name = "btnContestExcel2"
 		self._btnContestExcel2.Size = System.Drawing.Size(136, 29)
 		self._btnContestExcel2.TabIndex = 2
-		self._btnContestExcel2.Text = "輸出健康快樂組賽程表"
+		self._btnContestExcel2.Text = "輸出馬組賽程表"
 		self._btnContestExcel2.UseVisualStyleBackColor = True
 		self._btnContestExcel2.Click += self.BtnContestExcel2Click
 		# 
@@ -142,7 +150,7 @@ class frmSort(Form):
 		# 
 		# btnRecordExcel2
 		# 
-		self._btnRecordExcel2.Location = System.Drawing.Point(128, 74)
+		self._btnRecordExcel2.Location = System.Drawing.Point(128, 164)
 		self._btnRecordExcel2.Name = "btnRecordExcel2"
 		self._btnRecordExcel2.Size = System.Drawing.Size(136, 30)
 		self._btnRecordExcel2.TabIndex = 3
@@ -152,7 +160,7 @@ class frmSort(Form):
 		# 
 		# btnRecordExcel3
 		# 
-		self._btnRecordExcel3.Location = System.Drawing.Point(8, 110)
+		self._btnRecordExcel3.Location = System.Drawing.Point(8, 200)
 		self._btnRecordExcel3.Name = "btnRecordExcel3"
 		self._btnRecordExcel3.Size = System.Drawing.Size(114, 30)
 		self._btnRecordExcel3.TabIndex = 4
@@ -162,7 +170,7 @@ class frmSort(Form):
 		# 
 		# btnRecordExcel4
 		# 
-		self._btnRecordExcel4.Location = System.Drawing.Point(128, 110)
+		self._btnRecordExcel4.Location = System.Drawing.Point(128, 200)
 		self._btnRecordExcel4.Name = "btnRecordExcel4"
 		self._btnRecordExcel4.Size = System.Drawing.Size(136, 30)
 		self._btnRecordExcel4.TabIndex = 5
@@ -170,10 +178,50 @@ class frmSort(Form):
 		self._btnRecordExcel4.UseVisualStyleBackColor = True
 		self._btnRecordExcel4.Click += self.BtnRecordExcel4Click
 		# 
+		# btnContestExcel3
+		# 
+		self._btnContestExcel3.Location = System.Drawing.Point(8, 82)
+		self._btnContestExcel3.Name = "btnContestExcel3"
+		self._btnContestExcel3.Size = System.Drawing.Size(114, 29)
+		self._btnContestExcel3.TabIndex = 6
+		self._btnContestExcel3.Text = "輸出健康組賽程表"
+		self._btnContestExcel3.UseVisualStyleBackColor = True
+		self._btnContestExcel3.Click += self.BtnContestExcel3Click
+		# 
+		# btnContestExcel4
+		# 
+		self._btnContestExcel4.Location = System.Drawing.Point(128, 82)
+		self._btnContestExcel4.Name = "btnContestExcel4"
+		self._btnContestExcel4.Size = System.Drawing.Size(136, 29)
+		self._btnContestExcel4.TabIndex = 7
+		self._btnContestExcel4.Text = "輸出快樂組賽程表"
+		self._btnContestExcel4.UseVisualStyleBackColor = True
+		self._btnContestExcel4.Click += self.BtnContestExcel4Click
+		# 
+		# label4
+		# 
+		self._label4.Font = System.Drawing.Font("新細明體", 16, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 136)
+		self._label4.ForeColor = System.Drawing.Color.Red
+		self._label4.Location = System.Drawing.Point(87, 132)
+		self._label4.Name = "label4"
+		self._label4.Size = System.Drawing.Size(81, 29)
+		self._label4.TabIndex = 9
+		self._label4.Text = "計分表"
+		# 
+		# label3
+		# 
+		self._label3.Font = System.Drawing.Font("新細明體", 16, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 136)
+		self._label3.ForeColor = System.Drawing.Color.Red
+		self._label3.Location = System.Drawing.Point(87, 15)
+		self._label3.Name = "label3"
+		self._label3.Size = System.Drawing.Size(81, 29)
+		self._label3.TabIndex = 10
+		self._label3.Text = "賽程表"
+		# 
 		# frmSort
 		# 
 		self.BackColor = System.Drawing.Color.Black
-		self.ClientSize = System.Drawing.Size(317, 276)
+		self.ClientSize = System.Drawing.Size(316, 367)
 		self.Controls.Add(self._cmbCount)
 		self.Controls.Add(self._label2)
 		self.Controls.Add(self._btnClose)
@@ -200,13 +248,21 @@ class frmSort(Form):
 		pass
 
 	def BtnContestExcelClick(self, sender, e):
-		os.system(pypath+"\python.exe export_schedule.py")
+		os.system(pypath+"\python.exe export_array.py")
 		pass
 
-	def BtnRecordExcelClick(self, sender, e):
-		os.system(pypath+"\python.exe export_record.py")
+	def BtnContestExcel2Click(self, sender, e):
+		os.system(pypath+"\python.exe export_array2.py")
+		pass
+	
+	def BtnContestExcel3Click(self, sender, e):
+		os.system(pypath+"\python.exe export_array3.py")
 		pass
 
+	def BtnContestExcel4Click(self, sender, e):
+		os.system(pypath+"\python.exe export_array4.py")
+		pass
+	
 	def FrmSortLoad(self, sender, e):
 		pass
 
@@ -214,10 +270,10 @@ class frmSort(Form):
 		self.Close()
 		pass
 
-	def BtnContestExcel2Click(self, sender, e):
-		os.system(pypath+"\python.exe export_schedule2.py")
+	def BtnRecordExcelClick(self, sender, e):
+		os.system(pypath+"\python.exe export_record.py")
 		pass
-
+	
 	def BtnRecordExcel2Click(self, sender, e):
 		os.system(pypath+"\python.exe export_record2.py")
 		pass

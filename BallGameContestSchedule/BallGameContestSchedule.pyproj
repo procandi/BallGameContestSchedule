@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="export_array.py" />
+    <Compile Include="export_array2.py" />
+    <Compile Include="export_array3.py" />
+    <Compile Include="export_array4.py" />
     <Compile Include="export_record.py" />
     <Compile Include="export_record2.py" />
     <Compile Include="export_record3.py" />

@@ -17,7 +17,7 @@ class export_array:
 	def __init__(self):
 		#load template and base data
 		self.userinfo=modUserInfo.modUserInfo()
-		self.userinfo.loadbaseinfo(3)
+		self.userinfo.loadbaseinfo(5)
 		self.userinfo.loadtemplate()
 
 		#get begin date

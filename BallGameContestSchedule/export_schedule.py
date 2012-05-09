@@ -177,7 +177,7 @@ for i in range(d+1):	#day number
 										print "class2",j,i,k,j,i,n
 				
 				if userinfo.field[j].teamB[i][k]==userinfo.team[e].name:	#if this AM team name is equal this team name profile
-				if userinfo.team[e].good==userinfo.AM and k>4:	#if this team favorite AM, but it is contest in PM	
+					if userinfo.team[e].good==userinfo.AM and k>4:	#if this team favorite AM, but it is contest in PM	
 						for n in range(5):	#searh this day AM
 							for m in range(userinfo.team_count):	#team number
 								if userinfo.field[j].teamB[i][n]==userinfo.team[m].name:	#if this AM team name is equal this team name profile
