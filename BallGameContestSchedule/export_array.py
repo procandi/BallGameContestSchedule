@@ -72,41 +72,48 @@ class export_array:
 		#enum array
 		self.enumarray_main()
 		
+		#export excel
+		self.export_excel()
 		
-		#create excel
-		office=modOffice.modOffice()
-		office.create_excel_app()
-		office.create_excel_workbook()
-		office.create_excel_sheets()
 		
-		#set row and col
-		row=1
-		col=1
-		
-		for i in range(self.maxd):    #day number
-			#set excel title
-			if i+1==self.maxd and self.flag==True:
-				office.sheet.Cells(row, col).Value="********"
-				office.sheet.Cells(row, col+1).Value="********"
-			else:
-				v=re.sub(r"\d","",str(self.userinfo.field[0].date[i]))
-				if v.strip()!="":
-					office.sheet.Cells(row, col).Value=self.userinfo.field[0].date[i]
-					office.sheet.Cells(row, col+1).Value=self.userinfo.field[0].name
-			row+=1
+	def export_excel(self):
+		try:
+			#create excel
+			office=modOffice.modOffice()
+			office.create_excel_app()
+			office.create_excel_workbook()
+			office.create_excel_sheets()
 			
-			#set excel value
-			for k in range(self.userinfo.count+1):    #round number
-				v=re.sub(r"\d","",str(self.userinfo.field[0].teamA[i][k]))
-				if v!="":
-					if k<3:
-						office.sheet.Cells(row, col).Value=("0"+str(k+7)+":30")
-					else:
-						office.sheet.Cells(row, col).Value=(str(k+7)+":30")
-					office.sheet.Cells(row, col+1).Value=self.userinfo.field[0].teamA[i][k]
-					office.sheet.Cells(row, col+2).Value=self.userinfo.field[0].teamB[i][k]
-					row+=1
-		
+			#set row and col
+			row=1
+			col=1
+			
+			for i in range(self.maxd):    #day number
+				#set excel title
+				if i+1==self.maxd and self.flag==True:
+					office.sheet.Cells(row, col).Value="********"
+					office.sheet.Cells(row, col+1).Value="********"
+				else:
+					v=re.sub(r"\d","",str(self.userinfo.field[0].date[i]))
+					if v.strip()!="":
+						office.sheet.Cells(row, col).Value=self.userinfo.field[0].date[i]
+						office.sheet.Cells(row, col+1).Value=self.userinfo.field[0].name
+				row+=1
+				
+				#set excel value
+				for k in range(self.userinfo.count+1):    #round number
+					v=re.sub(r"\d","",str(self.userinfo.field[0].teamA[i][k]))
+					if v!="":
+						if k<3:
+							office.sheet.Cells(row, col).Value=("0"+str(k+7)+":30")
+						else:
+							office.sheet.Cells(row, col).Value=(str(k+7)+":30")
+						office.sheet.Cells(row, col+1).Value=self.userinfo.field[0].teamA[i][k]
+						office.sheet.Cells(row, col+2).Value=self.userinfo.field[0].teamB[i][k]
+						row+=1
+		except:
+			raise
+			
 	def enumarray_sub(self,arrow,x,y,addedx,addedy,takeout,day):
 		if self.arr.isOver[x][y]==False and self.arr.teamA[x][y]!="" and self.arr.teamB[x][y]!="":	#if this cell is can be choice, then save it and acount added number by arrow.
 			self.arr.isOver[x][y]=True
