@@ -27,10 +27,10 @@ class modUserInfo:
 		result=file.readfile("fielddata.txt")
 		
 		#made field array
-		self.field=range(300)
-		for i in range(300):
+		self.field=range(100)
+		for i in range(100):
 			self.field[i]=modPublic.sfield()
-			for j in range(300):
+			for j in range(100):
 				self.field[i].teamA[j]=range(14)
 				self.field[i].teamB[j]=range(14)
 				
@@ -66,8 +66,8 @@ class modUserInfo:
 		result=file.readfile("teamdata.txt")
 		
 		#made team struct and array
-		self.team=range(300)
-		for i in range(300):
+		self.team=range(100)
+		for i in range(100):
 			self.team[i]=modPublic.steam()
 		
 		#add team data to origin data
@@ -90,7 +90,7 @@ class modUserInfo:
 				self.team[i].name=va0[1].encode("big5")
 				self.team[i].field=va0[2].encode("big5")
 				self.team[i].good=va0[3].encode("big5")
-				for j in range(300):
+				for j in range(100):
 					if j<len(va1)-1:	#need subtract one, because date value will have one blank data.
 						self.team[i].schedule[j]=va1[j]
 					else:

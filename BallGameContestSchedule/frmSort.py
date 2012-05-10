@@ -248,19 +248,19 @@ class frmSort(Form):
 		pass
 
 	def BtnContestExcelClick(self, sender, e):
-		os.system(pypath+"\python.exe export_array.py")
+		os.system(pypath+"\python.exe export_template.py")
 		pass
 
 	def BtnContestExcel2Click(self, sender, e):
-		os.system(pypath+"\python.exe export_array2.py")
+		os.system(pypath+"\python.exe export_template2.py")
 		pass
 	
 	def BtnContestExcel3Click(self, sender, e):
-		os.system(pypath+"\python.exe export_array3.py")
+		os.system(pypath+"\python.exe export_template3.py")
 		pass
 
 	def BtnContestExcel4Click(self, sender, e):
-		os.system(pypath+"\python.exe export_array4.py")
+		os.system(pypath+"\python.exe export_template4.py")
 		pass
 	
 	def FrmSortLoad(self, sender, e):

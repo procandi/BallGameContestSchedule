@@ -13,7 +13,7 @@ import modUserInfo
 import modOffice
 import modPublic
 
-class export_array:
+class export_array4:
 	def __init__(self):
 		#load template and base data
 		self.userinfo=modUserInfo.modUserInfo()
@@ -172,4 +172,4 @@ class export_array:
 							self.arr.isOver[i][j]=True
 				break
 
-export_array()
+export_array4()

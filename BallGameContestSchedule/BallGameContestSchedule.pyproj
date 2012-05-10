@@ -69,6 +69,7 @@
     <Compile Include="export_record4.py" />
     <Compile Include="export_schedule.py" />
     <Compile Include="export_schedule2.py" />
+    <Compile Include="export_template.py" />
     <Compile Include="frmField.py" />
     <Compile Include="frmSort.py" />
     <Compile Include="frmTeam.py" />
