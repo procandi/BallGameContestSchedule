@@ -70,10 +70,15 @@
     <Compile Include="export_schedule.py" />
     <Compile Include="export_schedule2.py" />
     <Compile Include="export_template.py" />
+    <Compile Include="export_template2.py" />
+    <Compile Include="export_template3.py" />
+    <Compile Include="export_template4.py" />
     <Compile Include="frmField.py" />
     <Compile Include="frmSort.py" />
     <Compile Include="frmTeam.py" />
-    <Compile Include="frmTeamConfig.py" />
+    <Compile Include="frmTeamConfig.py">
+      <DependentUpon>frmTeam.py</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.py" />
     <Compile Include="modAlogorithm.py" />
     <Compile Include="modDate.py" />
